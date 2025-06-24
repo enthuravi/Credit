@@ -22,9 +22,7 @@
       var button= document.querySelector('button');
       var date= document.querySelector('#date');
       var amount= document.querySelector('#amount');
-      var data=[[0,0],[0,1]];
-      localStorage.setItem('credit',JSON.stringify(data));
-      data= JSON.parse(localStorage.getItem('credit'));
+      var data= JSON.parse(localStorage.getItem('credit')) || [];
       var session=[];
       
       function showdata(){
