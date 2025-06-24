@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Credits</title>
+  </head>
+  <body>
+    <div class="container">
+      <input id="date" type="text" placeholder="Date">
+      <input id="amount" type="text" placeholder="Amount">
+      <button>Save</button>
+      <table>
+        <tr><th>Date</th><th>Amount</th></tr>
+        <tbody id="tabledata"></tbody>
+      </table>
+    </div>
+    <script>
+      var button= document.querySelector('button');
+      var date= document.querySelector('#date');
+      var amount= document.querySelector('#amount');
+      var data=[];
+      data= localStorage.getItem('credit')
+      var session=[];
+      
+      function showdata(){
+      var k= '<tbody>';
+      for(let i=0; i<data.length; i++){
+        k+= '<tr>';
+        k+= '<td' +data[i][0]+'</td>';
+        k+= '<td' +data[i][1]+'</td>';
+        //k+=
+        k+='</tr>';
+      }
+      k+='</tbody>';
+      document.getElementById('tabledata'). innerHTML = k;
+      showdata();
+      
+      button.onclick= function(){
+        if(!date.value && !amount.value){
+          window.alert("Fill all fields");
+        }
+        else{
+          data.push([date.value, amount.value]);
+          showdata();
+        }
+      }
+    </script>
+  </body>
+</html>
