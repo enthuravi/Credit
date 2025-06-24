@@ -40,7 +40,8 @@
           window.alert("Fill all fields");
         }
         else{
-          data.push([date.value, amount.value]);
+          session=[date.value, amount.value];
+          data.push(session);
           localStorage.setItem('credit',data);
           showdata();
         }
