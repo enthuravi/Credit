@@ -18,8 +18,8 @@
       var date= document.querySelector('#date');
       var amount= document.querySelector('#amount');
       var data=[];
-      localStorage.setItem('credit',data);
-      data= localStorage.getItem('credit')
+      localStorage.setItem('credit',JSON.stringify(data));
+      data= JSON.parse(localStorage.getItem('credit'));
       var session=[];
       
       function showdata(){
@@ -42,7 +42,7 @@
         else{
           session=[date.value, amount.value];
           data.push(session);
-          localStorage.setItem('credit',data);
+          localStorage.setItem('credit',JSON.stringify(data));
           showdata();
         }
       }
