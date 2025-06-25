@@ -43,6 +43,7 @@
       var amount= document.querySelector('#amount');
       var data= JSON.parse(localStorage.getItem('credit')) || [];
       var session=[];
+      var sum=0;
       
       function showdata(){
       var k= '<tbody>';
@@ -50,9 +51,23 @@
         k+= '<tr>';
         k+= '<td> ' +data[i][0]+' </td>';
         k+= '<td> ' +data[i][1]+' </td>';
+        sum+= data[i][1];
         //k+=
         k+='</tr>';
       }
+ 
+      k+= '<tr>';
+      k+= '<th> Total </th>';
+      k+= '<td> ' + sum +' </td>';
+      k+= '</tr>';
+      k+= '<tr>';
+      k+= '<th> Proposed </th>';
+      k+= '<td> ' + 31500/4 +' </td>';
+      k+= '</tr>';
+      k+= '<tr>';
+      k+= '<th> Extra debit </th>';
+      k+= '<td> ' + sum - 31500/4 +' </td>';
+      k+= '</tr>';
       k+='</tbody>';
       document.getElementById('tabledata').innerHTML = k;}
       showdata();
