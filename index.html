@@ -15,12 +15,12 @@
         width:60%
         border-radius:8px
       }
-      th{border-bottom:2px solid black;
-        min-width:30%;}
+      th:nth-child(-n+2){border-bottom:2px solid black;
+        }
 
       td{ text-align:center;}
-      td::nth-child(2){
-        min-width:30%;
+      td:nth-child(n+2){
+        border-top:2px solid black;
       }
       table{background-color:#dfdfdf;
            font-size:32px;
@@ -58,15 +58,15 @@
  
       k+= '<tr>';
       k+= '<th> Total </th>';
-      k+= '<td> ' + sum +' </td>';
+      k+= '<th> ' + sum +' </th>';
       k+= '</tr>';
       k+= '<tr>';
       k+= '<th> Proposed </th>';
-      k+= '<td> ' + 31500/4 +' </td>';
+      k+= '<th> ' + 31500/4 +' </th>';
       k+= '</tr>';
       k+= '<tr>';
       k+= '<th> Extra debit </th>';
-      k+= '<td> ' + (sum - 31500/4) +' </td>';
+      k+= '<th> ' + (sum - 31500/4) +' </th>';
       k+= '</tr>';
       k+='</tbody>';
       document.getElementById('tabledata').innerHTML = k;}
